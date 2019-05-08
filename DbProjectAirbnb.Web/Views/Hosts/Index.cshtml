@@ -1,10 +1,11 @@
 ﻿@model IEnumerable<DbProjectAirbnb.Web.Model.Host>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Hosts";
+    Layout = "_InsertDeleteLayout";
 }
 
-<h1>Index</h1>
+<h1>@ViewData["Hosts"]</h1>
 
 <p>
     <a asp-action="Create">Create New</a>

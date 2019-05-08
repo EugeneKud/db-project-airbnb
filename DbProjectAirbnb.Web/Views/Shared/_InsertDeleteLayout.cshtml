@@ -1,0 +1,29 @@
+@{
+    Layout = "_Layout";
+}
+
+<div class="row">
+
+    <div class="col-2">
+        <nav class="nav flex-column">
+            <a class="nav-link" asp-controller="AmenityTypes">Amenity Types</a>
+            <a class="nav-link" asp-controller="Availabilities">Availabilities</a>
+            <a class="nav-link" asp-controller="BedTypes">Bed Types</a>
+            <a class="nav-link" asp-controller="CancellationPolicies">Cancellation Policies</a>
+            <a class="nav-link" asp-controller="Cities">Cities</a>
+            <a class="nav-link" asp-controller="Countries">Countries</a>
+            <a class="nav-link" asp-controller="Hosts">Hosts</a>
+            <a class="nav-link" asp-controller="HostVerifications">Host Verifications</a>
+            <a class="nav-link" asp-controller="Listings">Listings</a>
+            <a class="nav-link" asp-controller="Neighborhoods">Neighborhoods</a>
+            <a class="nav-link" asp-controller="PropertyTypes">Property Types</a>
+            <a class="nav-link" asp-controller="RoomTypes">Room Types</a>
+            <a class="nav-link" asp-controller="Users">Users</a>
+        </nav>
+    </div>
+
+    <div class="col-10">
+        @RenderBody()
+    </div>
+
+</div>
