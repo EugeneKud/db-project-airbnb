@@ -1,5 +1,3 @@
-using System;
-
 namespace DbProjectAirbnb.Web.Models
 {
     public class ErrorViewModel
