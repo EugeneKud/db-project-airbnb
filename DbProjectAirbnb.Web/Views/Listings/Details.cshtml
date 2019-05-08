@@ -1,0 +1,276 @@
+﻿@model DbProjectAirbnb.Web.Model.Listing
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Listing</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Access)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Access)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Accommodates)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Accommodates)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Bathrooms)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Bathrooms)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Bedrooms)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Bedrooms)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CleaningFee)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CleaningFee)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ExtraPeople)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ExtraPeople)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.GuestsIncluded)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.GuestsIncluded)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.HouseRules)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.HouseRules)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Interaction)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Interaction)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.IsBusinessTravelReady)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.IsBusinessTravelReady)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Latitude)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Latitude)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ListingUrl)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ListingUrl)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Longitude)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Longitude)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.MaximumNights)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.MaximumNights)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.MinimumNights)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.MinimumNights)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.MonthlyPrice)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.MonthlyPrice)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.NeighborhoodOverview)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.NeighborhoodOverview)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Notes)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Notes)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.PictureUrl)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.PictureUrl)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Price)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.RequireGuestPhoneVerification)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.RequireGuestPhoneVerification)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.RequireGuestProfilePicture)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.RequireGuestProfilePicture)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ReviewScoresAccuracy)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ReviewScoresAccuracy)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ReviewScoresCheckin)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ReviewScoresCheckin)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ReviewScoresCleanliness)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ReviewScoresCleanliness)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ReviewScoresCommunication)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ReviewScoresCommunication)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ReviewScoresLocation)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ReviewScoresLocation)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ReviewScoresRating)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ReviewScoresRating)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ReviewScoresValue)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ReviewScoresValue)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.SecurityDeposit)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.SecurityDeposit)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Space)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Space)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.SquareFeet)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.SquareFeet)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Summary)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Summary)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Transit)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Transit)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.WeeklyPrice)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.WeeklyPrice)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.BedType)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.BedType.Name)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CancellationPolicy)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CancellationPolicy.Name)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Host)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Host.PictureUrl)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Neighborhood)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Neighborhood.Name)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.PropertyType)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.PropertyType.Name)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.RoomType)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.RoomType.Name)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
