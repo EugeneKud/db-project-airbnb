@@ -1,7 +1,9 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using DbProjectAirbnb.Web.Model;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -26,8 +28,10 @@ namespace DbProjectAirbnb.Web
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
-
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            
+            services.AddDbContext<ModelContext>
+                (options => options.UseOracle("User Id=C##DB2019_G30;Password=DB2019_G30;Data Source=cs322-db.epfl.ch:1521/ORCLCDB"));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
