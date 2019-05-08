@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace DbProjectAirbnb.Web.Model
 {
-    public partial class PropertyType
+    public class PropertyType
     {
         public PropertyType()
         {

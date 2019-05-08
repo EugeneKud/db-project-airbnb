@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace DbProjectAirbnb.Web.Model
 {
-    public partial class CancellationPolicy
+    public class CancellationPolicy
     {
         public CancellationPolicy()
         {

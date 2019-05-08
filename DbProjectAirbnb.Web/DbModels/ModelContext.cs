@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace DbProjectAirbnb.Web.Model
 {
-    public partial class ModelContext : DbContext
+    public class ModelContext : DbContext
     {
         public ModelContext()
         {

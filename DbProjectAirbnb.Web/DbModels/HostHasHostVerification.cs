@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace DbProjectAirbnb.Web.Model
 {
-    public partial class HostHasHostVerification
+    public class HostHasHostVerification
     {
         public decimal HostId { get; set; }
         public decimal HostVerificationId { get; set; }

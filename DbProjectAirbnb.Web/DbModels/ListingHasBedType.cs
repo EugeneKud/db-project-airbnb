@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace DbProjectAirbnb.Web.Model
 {
-    public partial class ListingHasBedType
+    public class ListingHasBedType
     {
         public decimal ListingId { get; set; }
         public decimal BedTypeId { get; set; }
