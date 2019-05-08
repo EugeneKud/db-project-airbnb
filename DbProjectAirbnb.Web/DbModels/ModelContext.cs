@@ -4,10 +4,6 @@ namespace DbProjectAirbnb.Web.Model
 {
     public class ModelContext : DbContext
     {
-        public ModelContext()
-        {
-        }
-
         public ModelContext(DbContextOptions<ModelContext> options)
             : base(options)
         {
@@ -30,19 +26,6 @@ namespace DbProjectAirbnb.Web.Model
         public virtual DbSet<RoomType> RoomTypes { get; set; }
         public virtual DbSet<User> Users { get; set; }
         public virtual DbSet<UserReviewsListing> UsersReviewListings { get; set; }
-
-        // Unable to generate entity type for table 'C##DB2019_G30.RAW_LISTINGS'. Please see the warning messages.
-        // Unable to generate entity type for table 'C##DB2019_G30.RAW_CALENDAR'. Please see the warning messages.
-        // Unable to generate entity type for table 'C##DB2019_G30.RAW_REVIEWS'. Please see the warning messages.
-
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            if (!optionsBuilder.IsConfigured)
-            {
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-                optionsBuilder.UseOracle("User Id=C##DB2019_G30;Password=DB2019_G30;Data Source=cs322-db.epfl.ch:1521/ORCLCDB");
-            }
-        }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
