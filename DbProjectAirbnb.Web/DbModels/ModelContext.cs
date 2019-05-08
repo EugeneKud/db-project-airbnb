@@ -15,23 +15,23 @@ namespace DbProjectAirbnb.Web.Model
         {
         }
 
-        public virtual DbSet<AmenityTypes> AmenityTypes { get; set; }
-        public virtual DbSet<Availabilities> Availabilities { get; set; }
-        public virtual DbSet<BedTypes> BedTypes { get; set; }
-        public virtual DbSet<CancellationPolicies> CancellationPolicies { get; set; }
-        public virtual DbSet<Cities> Cities { get; set; }
-        public virtual DbSet<Countries> Countries { get; set; }
-        public virtual DbSet<HostVerifications> HostVerifications { get; set; }
-        public virtual DbSet<Hosts> Hosts { get; set; }
-        public virtual DbSet<HostsHaveHostVerifications> HostsHaveHostVerifications { get; set; }
-        public virtual DbSet<Listings> Listings { get; set; }
-        public virtual DbSet<ListingsHaveAmenityTypes> ListingsHaveAmenityTypes { get; set; }
-        public virtual DbSet<ListingsHaveBedTypes> ListingsHaveBedTypes { get; set; }
-        public virtual DbSet<Neighborhoods> Neighborhoods { get; set; }
-        public virtual DbSet<PropertyTypes> PropertyTypes { get; set; }
-        public virtual DbSet<RoomTypes> RoomTypes { get; set; }
-        public virtual DbSet<Users> Users { get; set; }
-        public virtual DbSet<UsersReviewListings> UsersReviewListings { get; set; }
+        public virtual DbSet<AmenityType> AmenityTypes { get; set; }
+        public virtual DbSet<Availability> Availabilities { get; set; }
+        public virtual DbSet<BedType> BedTypes { get; set; }
+        public virtual DbSet<CancellationPolicy> CancellationPolicies { get; set; }
+        public virtual DbSet<City> Cities { get; set; }
+        public virtual DbSet<Country> Countries { get; set; }
+        public virtual DbSet<HostVerification> HostVerifications { get; set; }
+        public virtual DbSet<Host> Hosts { get; set; }
+        public virtual DbSet<HostHasHostVerification> HostsHaveHostVerifications { get; set; }
+        public virtual DbSet<Listing> Listings { get; set; }
+        public virtual DbSet<ListingHasAmenityType> ListingsHaveAmenityTypes { get; set; }
+        public virtual DbSet<ListingHasBedType> ListingsHaveBedTypes { get; set; }
+        public virtual DbSet<Neighborhood> Neighborhoods { get; set; }
+        public virtual DbSet<PropertyType> PropertyTypes { get; set; }
+        public virtual DbSet<RoomType> RoomTypes { get; set; }
+        public virtual DbSet<User> Users { get; set; }
+        public virtual DbSet<UserReviewsListing> UsersReviewListings { get; set; }
 
         // Unable to generate entity type for table 'C##DB2019_G30.RAW_LISTINGS'. Please see the warning messages.
         // Unable to generate entity type for table 'C##DB2019_G30.RAW_CALENDAR'. Please see the warning messages.
@@ -51,7 +51,7 @@ namespace DbProjectAirbnb.Web.Model
             modelBuilder.HasAnnotation("ProductVersion", "2.2.4-servicing-10062")
                 .HasAnnotation("Relational:DefaultSchema", "C##DB2019_G30");
 
-            modelBuilder.Entity<AmenityTypes>(entity =>
+            modelBuilder.Entity<AmenityType>(entity =>
             {
                 entity.ToTable("AMENITY_TYPES");
 
@@ -74,7 +74,7 @@ namespace DbProjectAirbnb.Web.Model
                     .HasColumnType("VARCHAR2(50)");
             });
 
-            modelBuilder.Entity<Availabilities>(entity =>
+            modelBuilder.Entity<Availability>(entity =>
             {
                 entity.ToTable("AVAILABILITIES");
 
@@ -110,7 +110,7 @@ namespace DbProjectAirbnb.Web.Model
                     .HasConstraintName("SYS_C0038425");
             });
 
-            modelBuilder.Entity<BedTypes>(entity =>
+            modelBuilder.Entity<BedType>(entity =>
             {
                 entity.ToTable("BED_TYPES");
 
@@ -133,7 +133,7 @@ namespace DbProjectAirbnb.Web.Model
                     .HasColumnType("VARCHAR2(20)");
             });
 
-            modelBuilder.Entity<CancellationPolicies>(entity =>
+            modelBuilder.Entity<CancellationPolicy>(entity =>
             {
                 entity.ToTable("CANCELLATION_POLICIES");
 
@@ -156,7 +156,7 @@ namespace DbProjectAirbnb.Web.Model
                     .HasColumnType("VARCHAR2(30)");
             });
 
-            modelBuilder.Entity<Cities>(entity =>
+            modelBuilder.Entity<City>(entity =>
             {
                 entity.ToTable("CITIES");
 
@@ -188,7 +188,7 @@ namespace DbProjectAirbnb.Web.Model
                     .HasConstraintName("SYS_C0038354");
             });
 
-            modelBuilder.Entity<Countries>(entity =>
+            modelBuilder.Entity<Country>(entity =>
             {
                 entity.ToTable("COUNTRIES");
 
@@ -220,7 +220,7 @@ namespace DbProjectAirbnb.Web.Model
                     .HasColumnType("VARCHAR2(60)");
             });
 
-            modelBuilder.Entity<HostVerifications>(entity =>
+            modelBuilder.Entity<HostVerification>(entity =>
             {
                 entity.ToTable("HOST_VERIFICATIONS");
 
@@ -243,7 +243,7 @@ namespace DbProjectAirbnb.Web.Model
                     .HasColumnType("NVARCHAR2(30)");
             });
 
-            modelBuilder.Entity<Hosts>(entity =>
+            modelBuilder.Entity<Host>(entity =>
             {
                 entity.ToTable("HOSTS");
 
@@ -293,8 +293,8 @@ namespace DbProjectAirbnb.Web.Model
                     .HasColumnType("VARCHAR2(50)");
 
                 entity.HasOne(d => d.IdNavigation)
-                    .WithOne(p => p.Hosts)
-                    .HasForeignKey<Hosts>(d => d.Id)
+                    .WithOne(p => p.Host)
+                    .HasForeignKey<Host>(d => d.Id)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("SYS_C0038374");
 
@@ -305,7 +305,7 @@ namespace DbProjectAirbnb.Web.Model
                     .HasConstraintName("SYS_C0038375");
             });
 
-            modelBuilder.Entity<HostsHaveHostVerifications>(entity =>
+            modelBuilder.Entity<HostHasHostVerification>(entity =>
             {
                 entity.HasKey(e => new { e.HostId, e.HostVerificationId })
                     .HasName("SYS_C0038403");
@@ -337,7 +337,7 @@ namespace DbProjectAirbnb.Web.Model
                     .HasConstraintName("SYS_C0038405");
             });
 
-            modelBuilder.Entity<Listings>(entity =>
+            modelBuilder.Entity<Listing>(entity =>
             {
                 entity.ToTable("LISTINGS");
 
@@ -550,7 +550,7 @@ namespace DbProjectAirbnb.Web.Model
                     .HasConstraintName("SYS_C0038401");
             });
 
-            modelBuilder.Entity<ListingsHaveAmenityTypes>(entity =>
+            modelBuilder.Entity<ListingHasAmenityType>(entity =>
             {
                 entity.HasKey(e => new { e.ListingId, e.AmenityTypeId })
                     .HasName("SYS_C0038406");
@@ -582,7 +582,7 @@ namespace DbProjectAirbnb.Web.Model
                     .HasConstraintName("SYS_C0038407");
             });
 
-            modelBuilder.Entity<ListingsHaveBedTypes>(entity =>
+            modelBuilder.Entity<ListingHasBedType>(entity =>
             {
                 entity.HasKey(e => new { e.ListingId, e.BedTypeId })
                     .HasName("SYS_C0038411");
@@ -618,7 +618,7 @@ namespace DbProjectAirbnb.Web.Model
                     .HasConstraintName("SYS_C0038412");
             });
 
-            modelBuilder.Entity<Neighborhoods>(entity =>
+            modelBuilder.Entity<Neighborhood>(entity =>
             {
                 entity.ToTable("NEIGHBORHOODS");
 
@@ -651,7 +651,7 @@ namespace DbProjectAirbnb.Web.Model
                     .HasConstraintName("SYS_C0038364");
             });
 
-            modelBuilder.Entity<PropertyTypes>(entity =>
+            modelBuilder.Entity<PropertyType>(entity =>
             {
                 entity.ToTable("PROPERTY_TYPES");
 
@@ -674,7 +674,7 @@ namespace DbProjectAirbnb.Web.Model
                     .HasColumnType("VARCHAR2(30)");
             });
 
-            modelBuilder.Entity<RoomTypes>(entity =>
+            modelBuilder.Entity<RoomType>(entity =>
             {
                 entity.ToTable("ROOM_TYPES");
 
@@ -697,7 +697,7 @@ namespace DbProjectAirbnb.Web.Model
                     .HasColumnType("VARCHAR2(20)");
             });
 
-            modelBuilder.Entity<Users>(entity =>
+            modelBuilder.Entity<User>(entity =>
             {
                 entity.ToTable("USERS");
 
@@ -714,7 +714,7 @@ namespace DbProjectAirbnb.Web.Model
                     .HasColumnType("VARCHAR2(50)");
             });
 
-            modelBuilder.Entity<UsersReviewListings>(entity =>
+            modelBuilder.Entity<UserReviewsListing>(entity =>
             {
                 entity.ToTable("USERS_REVIEW_LISTINGS");
 

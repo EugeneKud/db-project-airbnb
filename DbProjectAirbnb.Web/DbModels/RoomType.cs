@@ -3,16 +3,16 @@ using System.Collections.Generic;
 
 namespace DbProjectAirbnb.Web.Model
 {
-    public partial class RoomTypes
+    public partial class RoomType
     {
-        public RoomTypes()
+        public RoomType()
         {
-            Listings = new HashSet<Listings>();
+            Listings = new HashSet<Listing>();
         }
 
         public decimal Id { get; set; }
         public string Name { get; set; }
 
-        public virtual ICollection<Listings> Listings { get; set; }
+        public virtual ICollection<Listing> Listings { get; set; }
     }
 }

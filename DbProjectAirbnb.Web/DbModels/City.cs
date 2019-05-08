@@ -3,18 +3,18 @@ using System.Collections.Generic;
 
 namespace DbProjectAirbnb.Web.Model
 {
-    public partial class Cities
+    public partial class City
     {
-        public Cities()
+        public City()
         {
-            Neighborhoods = new HashSet<Neighborhoods>();
+            Neighborhoods = new HashSet<Neighborhood>();
         }
 
         public decimal Id { get; set; }
         public string Name { get; set; }
         public decimal? CountryId { get; set; }
 
-        public virtual Countries Country { get; set; }
-        public virtual ICollection<Neighborhoods> Neighborhoods { get; set; }
+        public virtual Country Country { get; set; }
+        public virtual ICollection<Neighborhood> Neighborhoods { get; set; }
     }
 }

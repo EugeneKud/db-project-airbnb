@@ -3,14 +3,14 @@ using System.Collections.Generic;
 
 namespace DbProjectAirbnb.Web.Model
 {
-    public partial class Listings
+    public partial class Listing
     {
-        public Listings()
+        public Listing()
         {
-            Availabilities = new HashSet<Availabilities>();
-            ListingsHaveAmenityTypes = new HashSet<ListingsHaveAmenityTypes>();
-            ListingsHaveBedTypes = new HashSet<ListingsHaveBedTypes>();
-            UsersReviewListings = new HashSet<UsersReviewListings>();
+            Availabilities = new HashSet<Availability>();
+            ListingsHaveAmenityTypes = new HashSet<ListingHasAmenityType>();
+            ListingsHaveBedTypes = new HashSet<ListingHasBedType>();
+            UsersReviewListings = new HashSet<UserReviewsListing>();
         }
 
         public decimal Id { get; set; }
@@ -58,15 +58,15 @@ namespace DbProjectAirbnb.Web.Model
         public string Transit { get; set; }
         public decimal? WeeklyPrice { get; set; }
 
-        public virtual BedTypes BedType { get; set; }
-        public virtual CancellationPolicies CancellationPolicy { get; set; }
-        public virtual Hosts Host { get; set; }
-        public virtual Neighborhoods Neighborhood { get; set; }
-        public virtual PropertyTypes PropertyType { get; set; }
-        public virtual RoomTypes RoomType { get; set; }
-        public virtual ICollection<Availabilities> Availabilities { get; set; }
-        public virtual ICollection<ListingsHaveAmenityTypes> ListingsHaveAmenityTypes { get; set; }
-        public virtual ICollection<ListingsHaveBedTypes> ListingsHaveBedTypes { get; set; }
-        public virtual ICollection<UsersReviewListings> UsersReviewListings { get; set; }
+        public virtual BedType BedType { get; set; }
+        public virtual CancellationPolicy CancellationPolicy { get; set; }
+        public virtual Host Host { get; set; }
+        public virtual Neighborhood Neighborhood { get; set; }
+        public virtual PropertyType PropertyType { get; set; }
+        public virtual RoomType RoomType { get; set; }
+        public virtual ICollection<Availability> Availabilities { get; set; }
+        public virtual ICollection<ListingHasAmenityType> ListingsHaveAmenityTypes { get; set; }
+        public virtual ICollection<ListingHasBedType> ListingsHaveBedTypes { get; set; }
+        public virtual ICollection<UserReviewsListing> UsersReviewListings { get; set; }
     }
 }
