@@ -1,4 +1,4 @@
-﻿using DbProjectAirbnb.Web.Model;
+﻿using DbProjectAirbnb.Web.Entities;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;

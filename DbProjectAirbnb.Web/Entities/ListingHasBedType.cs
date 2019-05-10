@@ -1,4 +1,4 @@
-﻿namespace DbProjectAirbnb.Web.Model
+﻿namespace DbProjectAirbnb.Web.Entities
 {
     public class ListingHasBedType
     {

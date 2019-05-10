@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace DbProjectAirbnb.Web.Model
+namespace DbProjectAirbnb.Web.Entities
 {
     public class Country
     {

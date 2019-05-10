@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using DbProjectAirbnb.Web.Entities;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using DbProjectAirbnb.Web.Model;
 
 namespace DbProjectAirbnb.Web.Controllers
 {

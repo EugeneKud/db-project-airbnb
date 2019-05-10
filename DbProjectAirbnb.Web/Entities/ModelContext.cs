@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 
-namespace DbProjectAirbnb.Web.Model
+namespace DbProjectAirbnb.Web.Entities
 {
     public class ModelContext : DbContext
     {
