@@ -1,3 +1,4 @@
+@using System.Data
 @model DbProjectAirbnb.Web.Entities.PredefinedQuery
 
 @{
@@ -16,3 +17,18 @@
 </pre>
 
 <h3>Result</h3>
+
+@if (Model.DataTable != null)
+{
+    <table class="table">
+        @foreach (DataRow row in Model.DataTable.Rows)
+        {
+            <tr>
+                @foreach (DataColumn column in Model.DataTable.Columns)
+                {
+                    <td>@row[column.ColumnName].ToString()</td>
+                }
+            </tr>
+        }
+    </table>
+}

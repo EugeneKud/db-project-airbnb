@@ -1,3 +1,5 @@
+using System.Data;
+
 namespace DbProjectAirbnb.Web.Entities
 {
     public class PredefinedQuery
@@ -7,5 +9,6 @@ namespace DbProjectAirbnb.Web.Entities
         public decimal Order { get; set; }
         public string Description { get; set; }
         public string Sql { get; set; }
+        public DataTable DataTable { get; set; } // ef ignored
     }
 }

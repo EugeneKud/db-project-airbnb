@@ -670,6 +670,8 @@ namespace DbProjectAirbnb.Web.Entities
                     .IsRequired()
                     .HasColumnName("SQL")
                     .HasColumnType("VARCHAR2(4000)");
+
+                entity.Ignore(e => e.DataTable);
             });
 
             modelBuilder.Entity<PropertyType>(entity =>
