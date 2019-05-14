@@ -1,6 +1,185 @@
+@model DbProjectAirbnb.Web.Models.TablesToSearchMask
+
 @{
-    ViewBag.Title = "Search";
-    Layout = "_Layout";
+    ViewData["Title"] = "Search";
+    var hasSearchResults = Model.ResultData != null;
 }
 
-<h1>@ViewBag.Title</h1>
+<h1>Search</h1>
+
+<hr/>
+<form asp-action="Index">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="form-group">
+        <input asp-for="SearchText" class="form-control form-control-lg" type="text" placeholder="Search...">
+        <span asp-validation-for="SearchText" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Search" class="btn btn-primary"/>
+    </div>
+    <p>
+        <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="@(hasSearchResults ? "true" : "false")" aria-controls="collapseExample">
+            Advanced Options
+        </a>
+    </p>
+    <div class="collapse @(hasSearchResults ? "show" : "")" id="collapseExample">
+        <div class='row'>
+            <div class="col-sm-4">
+                <div class="form-group form-check">
+                    <label class="form-check-label">
+                        <input class="form-check-input" asp-for="AmenityTypes"/> @Html.DisplayNameFor(model => model.AmenityTypes)
+                    </label>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="form-group form-check">
+                    <label class="form-check-label">
+                        <input class="form-check-input" asp-for="Availabilities"/> @Html.DisplayNameFor(model => model.Availabilities)
+                    </label>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="form-group form-check">
+                    <label class="form-check-label">
+                        <input class="form-check-input" asp-for="BedTypes"/> @Html.DisplayNameFor(model => model.BedTypes)
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class='row'>
+            <div class="col-sm-4">
+                <div class="form-group form-check">
+                    <label class="form-check-label">
+                        <input class="form-check-input" asp-for="CancellationPolicies"/> @Html.DisplayNameFor(model => model.CancellationPolicies)
+                    </label>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="form-group form-check">
+                    <label class="form-check-label">
+                        <input class="form-check-input" asp-for="Cities"/> @Html.DisplayNameFor(model => model.Cities)
+                    </label>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="form-group form-check">
+                    <label class="form-check-label">
+                        <input class="form-check-input" asp-for="Countries"/> @Html.DisplayNameFor(model => model.Countries)
+                    </label>
+                </div>
+            </div>
+        </div>
+
+
+        <div class='row'>
+            <div class="col-sm-4">
+                <div class="form-group form-check">
+                    <label class="form-check-label">
+                        <input class="form-check-input" asp-for="HostVerifications"/> @Html.DisplayNameFor(model => model.HostVerifications)
+                    </label>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="form-group form-check">
+                    <label class="form-check-label">
+                        <input class="form-check-input" asp-for="Hosts"/> @Html.DisplayNameFor(model => model.Hosts)
+                    </label>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="form-group form-check">
+                    <label class="form-check-label">
+                        <input class="form-check-input" asp-for="HostsHaveHostVerifications"/> @Html.DisplayNameFor(model => model.HostsHaveHostVerifications)
+                    </label>
+                </div>
+            </div>
+        </div>
+
+
+        <div class='row'>
+            <div class="col-sm-4">
+                <div class="form-group form-check">
+                    <label class="form-check-label">
+                        <input class="form-check-input" asp-for="Listings"/> @Html.DisplayNameFor(model => model.Listings)
+                    </label>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="form-group form-check">
+                    <label class="form-check-label">
+                        <input class="form-check-input" asp-for="ListingsHaveAmenityTypes"/> @Html.DisplayNameFor(model => model.ListingsHaveAmenityTypes)
+                    </label>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="form-group form-check">
+                    <label class="form-check-label">
+                        <input class="form-check-input" asp-for="ListingsHaveBedTypes"/> @Html.DisplayNameFor(model => model.ListingsHaveBedTypes)
+                    </label>
+                </div>
+            </div>
+        </div>
+
+
+        <div class='row'>
+            <div class="col-sm-4">
+                <div class="form-group form-check">
+                    <label class="form-check-label">
+                        <input class="form-check-input" asp-for="Neighborhoods"/> @Html.DisplayNameFor(model => model.Neighborhoods)
+                    </label>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="form-group form-check">
+                    <label class="form-check-label">
+                        <input class="form-check-input" asp-for="PredefinedQueries"/> @Html.DisplayNameFor(model => model.PredefinedQueries)
+                    </label>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="form-group form-check">
+                    <label class="form-check-label">
+                        <input class="form-check-input" asp-for="PropertyTypes"/> @Html.DisplayNameFor(model => model.PropertyTypes)
+                    </label>
+                </div>
+            </div>
+        </div>
+
+
+        <div class='row'>
+            <div class="col-sm-4">
+                <div class="form-group form-check">
+                    <label class="form-check-label">
+                        <input class="form-check-input" asp-for="RoomTypes"/> @Html.DisplayNameFor(model => model.RoomTypes)
+                    </label>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="form-group form-check">
+                    <label class="form-check-label">
+                        <input class="form-check-input" asp-for="Users"/> @Html.DisplayNameFor(model => model.Users)
+                    </label>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="form-group form-check">
+                    <label class="form-check-label">
+                        <input class="form-check-input" asp-for="UsersReviewListings"/> @Html.DisplayNameFor(model => model.UsersReviewListings)
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</form>
+
+@if (Model.ResultData != null)
+{
+    <h2>Results: </h2>
+    <hr>
+}
+
+@section Scripts {
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+}
