@@ -1,9 +1,15 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using System;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace DbProjectAirbnb.Web.Entities
 {
     public class ModelContext : DbContext
     {
+        public ModelContext()
+        {
+        }
+
         public ModelContext(DbContextOptions<ModelContext> options)
             : base(options)
         {
@@ -22,6 +28,7 @@ namespace DbProjectAirbnb.Web.Entities
         public virtual DbSet<ListingHasAmenityType> ListingsHaveAmenityTypes { get; set; }
         public virtual DbSet<ListingHasBedType> ListingsHaveBedTypes { get; set; }
         public virtual DbSet<Neighborhood> Neighborhoods { get; set; }
+        public virtual DbSet<PredefinedQuery> PredefinedQueries { get; set; }
         public virtual DbSet<PropertyType> PropertyTypes { get; set; }
         public virtual DbSet<RoomType> RoomTypes { get; set; }
         public virtual DbSet<User> Users { get; set; }
@@ -60,7 +67,7 @@ namespace DbProjectAirbnb.Web.Entities
                 entity.ToTable("AVAILABILITIES");
 
                 entity.HasIndex(e => e.Id)
-                    .HasName("SYS_C0038423")
+                    .HasName("SYS_C0038493")
                     .IsUnique();
 
                 entity.HasIndex(e => new { e.Date, e.ListingId })
@@ -69,7 +76,8 @@ namespace DbProjectAirbnb.Web.Entities
 
                 entity.Property(e => e.Id)
                     .HasColumnName("ID")
-                    .HasColumnType("NUMBER");
+                    .HasColumnType("NUMBER")
+                    .ValueGeneratedOnAdd();
 
                 entity.Property(e => e.Available).HasColumnName("AVAILABLE");
 
@@ -88,7 +96,7 @@ namespace DbProjectAirbnb.Web.Entities
                 entity.HasOne(d => d.Listing)
                     .WithMany(p => p.Availabilities)
                     .HasForeignKey(d => d.ListingId)
-                    .HasConstraintName("SYS_C0038425");
+                    .HasConstraintName("SYS_C0038495");
             });
 
             modelBuilder.Entity<BedType>(entity =>
@@ -632,6 +640,38 @@ namespace DbProjectAirbnb.Web.Entities
                     .HasConstraintName("SYS_C0038364");
             });
 
+            modelBuilder.Entity<PredefinedQuery>(entity =>
+            {
+                entity.ToTable("PREDEFINED_QUERIES");
+
+                entity.HasIndex(e => e.Id)
+                    .HasName("SYS_C0040117")
+                    .IsUnique();
+
+                entity.Property(e => e.Id)
+                    .HasColumnName("ID")
+                    .HasColumnType("NUMBER")
+                    .ValueGeneratedOnAdd();
+
+                entity.Property(e => e.Deliverable)
+                    .HasColumnName("DELIVERABLE")
+                    .HasColumnType("NUMBER(38)");
+
+                entity.Property(e => e.Description)
+                    .IsRequired()
+                    .HasColumnName("DESCRIPTION")
+                    .HasColumnType("VARCHAR2(1000)");
+
+                entity.Property(e => e.Order)
+                    .HasColumnName("ORDER")
+                    .HasColumnType("NUMBER(38)");
+
+                entity.Property(e => e.Sql)
+                    .IsRequired()
+                    .HasColumnName("SQL")
+                    .HasColumnType("VARCHAR2(4000)");
+            });
+
             modelBuilder.Entity<PropertyType>(entity =>
             {
                 entity.ToTable("PROPERTY_TYPES");
@@ -764,19 +804,17 @@ namespace DbProjectAirbnb.Web.Entities
 
             modelBuilder.HasSequence("ISEQ$$_108855");
 
-            modelBuilder.HasSequence("ISEQ$$_108861");
-
-            modelBuilder.HasSequence("ISEQ$$_108865");
-
-            modelBuilder.HasSequence("ISEQ$$_108869");
-
-            modelBuilder.HasSequence("ISEQ$$_118388");
-
             modelBuilder.HasSequence("ISEQ$$_122906");
 
             modelBuilder.HasSequence("ISEQ$$_122910");
 
             modelBuilder.HasSequence("ISEQ$$_122914");
+
+            modelBuilder.HasSequence("ISEQ$$_123174");
+
+            modelBuilder.HasSequence("ISEQ$$_126386");
+
+            modelBuilder.HasSequence("ISEQ$$_126393");
         }
     }
 }

@@ -1,0 +1,18 @@
+@model DbProjectAirbnb.Web.Entities.PredefinedQuery
+
+@{
+    ViewBag.Title = $"Query {Model.Deliverable}{Model.Order:00}";
+    Layout = "_PredefinedQueriesLayout";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<h3>Query Description</h3>
+<p class="lead">@Model.Description</p>
+
+<h3>Query SQL</h3>
+<pre>
+@Model.Sql
+</pre>
+
+<h3>Result</h3>
