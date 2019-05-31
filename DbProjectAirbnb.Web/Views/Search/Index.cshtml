@@ -132,21 +132,10 @@
             <div class="col-sm-4">
                 <div class="form-group form-check">
                     <label class="form-check-label">
-                        <input class="form-check-input" asp-for="PredefinedQueries"/> @Html.DisplayNameFor(model => model.PredefinedQueries)
-                    </label>
-                </div>
-            </div>
-            <div class="col-sm-4">
-                <div class="form-group form-check">
-                    <label class="form-check-label">
                         <input class="form-check-input" asp-for="PropertyTypes"/> @Html.DisplayNameFor(model => model.PropertyTypes)
                     </label>
                 </div>
             </div>
-        </div>
-
-
-        <div class='row'>
             <div class="col-sm-4">
                 <div class="form-group form-check">
                     <label class="form-check-label">
@@ -154,6 +143,10 @@
                     </label>
                 </div>
             </div>
+        </div>
+
+
+        <div class='row'>
             <div class="col-sm-4">
                 <div class="form-group form-check">
                     <label class="form-check-label">
@@ -178,6 +171,26 @@
 {
     <h2>Results: </h2>
     <hr>
+    <h3>AmenityTypes</h3>
+    <p>Found : @Model.AmenityTypesResultCount</p>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>
+                Name
+            </th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var item in Model.AmenityTypesResult) {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
 }
 
 @section Scripts {
